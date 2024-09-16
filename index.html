@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <script src="./index.js"></script>
+    <div class="form-container">
+      <h2>Contact Us</h2>
+      <div class="form-body-container">
+        <div class="name-container">
+          <div class="firstname-container">
+            <label class="lab1">First Name *</label>
+            <input type="text" id="firstname" onkeyup="validateFirstname()" />
+            <p id="firstname-error-message">first name required</p>
+          </div>
+          <div class="lastname-container">
+            <label class="lab1">Last Name *</label>
+            <input type="text" id="lastname" onkeyup="validateLastname()" />
+            <p id="lastname-error-message">last name required</p>
+          </div>
+        </div>
+        <div class="emai-container">
+          <label class="lab1">Email Address *</label>
+          <input type="email" id="email" onkeyup="validateEmail()" />
+          <p id="email-error-message">email required</p>
+        </div>
+        <div class="query-container">
+          <label class="lab1">Query Type *</label>
+          <div class="queryparent-container">
+            <div class="general-container">
+              <input
+                type="radio"
+                id="generalquery"
+                name="query"
+                onclick="validateQuerytype()"
+              />
+              <label class="support">General Enquiry</label>
+            </div>
+            <div class="supportrequest-container">
+              <input
+                type="radio"
+                id="supportquery"
+                name="query"
+                onclick="validateQuerytype()"
+              />
+              <label class="support">Support Request</label>
+            </div>
+          </div>
+          <p id="query-error-message">please select a query type</p>
+        </div>
+        <div class="msg-container">
+          <label class="lab1">Message *</label>
+          <input type="textarea" id="message" onkeyup="validateMessage()" />
+          <p id="checkbox-error-message">this field is required</p>
+        </div>
+        <div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="checkbox" onclick="validateCheckbox()" />
+            <p>I consent to being contacted by the team *</p>
+          </div>
+
+          <p id="subcheckbox-error-message">
+            to submit this form,please consent to being contacted
+          </p>
+        </div>
+        <div><button onclick="validateForm()">Submit</button></div>
+      </div>
+    </div>
+  </body>
+</html>
